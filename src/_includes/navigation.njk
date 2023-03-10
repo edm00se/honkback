@@ -1,0 +1,62 @@
+<ul class="navigation">
+	<li {% if page.fileSlug == './index.html' %} class="active" {% endif %}>
+		<a href="./index.html">
+			<em>{{ posts.length }}</em>
+			Posts
+		</a>
+	</li>
+	{#
+	<li>
+			<em>{{ replies.length }}</em>
+			Replies
+	</li>
+	#}
+	<li {% if page.fileSlug == './likes.html' %} class="active" {% endif %}>
+		<a href="./likes.html">
+			<em>{{ likes.length }}</em>
+			Likes
+		</a>
+	</li>
+	<li {% if page.fileSlug == './bookmarks.html' %} class="active" {% endif %}>
+		<a href="./bookmarks.html">
+			<em>{{ bookmarks.length }}</em>
+			Bookmarks
+		</a>
+	</li>
+	<li {% if page.fileSlug == './media.html' %} class="active" {% endif %}>
+		<a href="./media.html">
+			<em>{{ media.length }}</em>
+			Media
+		</a>
+	</li>
+	<li {% if page.fileSlug == './tags.html' %} class="active" {% endif %}>
+		<a href="./tags.html">
+			<em>{{ tags.length }}</em>
+			Tags
+		</a>
+	</li>
+</ul>
+
+<style type="text/css">
+ul.navigation {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	margin: 0;
+	padding: 0;
+	color: var(--text-color-secondary);
+	background-color: var(--page-background-color);
+}
+ul.navigation li {
+	display: block;
+	padding: 1rem;
+}
+ul.navigation li.active {
+	background-color: var(--background-color);
+}
+ul.navigation li em {
+	font-weight: bold;
+	font-style: normal;
+}
+</style>

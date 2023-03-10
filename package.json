@@ -1,0 +1,25 @@
+{
+  "name": "honkback",
+  "version": "1.0.0",
+  "description": "a honk.farm archive implementation of mojoaxel/tootback",
+  "scripts": {
+    "clean": "rm -rf .cache _site",
+    "start": "npx @11ty/eleventy --quiet --serve",
+    "build": "npx @11ty/eleventy",
+    "build:debug": "DEBUG=Eleventy* npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edm00se/honkback.git"
+  },
+  "keywords": [
+    "mastodon"
+  ],
+  "homepage": "https://github.com/edm00se/honkback",
+  "prettier": "@fullstax/prettier-config",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "@fullstax/prettier-config": "^1.0.2",
+    "prettier": "^2.8.4"
+  }
+}

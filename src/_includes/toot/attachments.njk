@@ -1,0 +1,13 @@
+{% for attachment in toot.object.attachment %}
+<a class="toot-attachment" href="{{ attachment.url }}" target="_blank" loading="lazy">
+	{# "mediaType": "video/mp4" #}
+		{% if attachment.mediaType == 'video/mp4' %}
+			<video src="{{ attachment.url }}" autoplay loop>alt text: {{ attachment.name }}</video>
+		{% else %}
+		{# "mediaType": "image/jpeg" #}
+		{# "mediaType": "image/png" #}
+		{# "mediaType": "image/webp" #}
+		<img alt="{{ attachment.name }}" src="{{ attachment.url }}" />
+		{% endif %}
+</a>
+{% endfor %}
