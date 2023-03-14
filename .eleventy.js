@@ -14,6 +14,10 @@ module.exports = function(eleventyConfig) {
 		[`${archiveCache}/header.*`]: '/'
 	});
 
+	eleventyConfig.addFilter("postSlug", (post) => 
+		post.object.id.split("/").at(-1)
+	);
+
 	eleventyConfig.addFilter("isoString", (date = Date.now()) => 
 		new Date(date).toISOString()
 	);

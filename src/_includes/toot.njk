@@ -3,7 +3,7 @@
 		<div class="user">
 			<div class="avatar">
 				<img 
-					src="{{ actor.icon.url }}" 
+					src="/{{ actor.icon.url }}" 
 					alt="users avatar">
 			</div>
 			<div class="name">
@@ -12,7 +12,9 @@
 			</div>
 		</div>
 		<div class="published">
-			{{ toot.published | localDateTime }}
+			<a href={{ toot | postSlug }}>
+				{{ toot.published | localDateTime }}
+			</a>
 		</div>
 	</header>
 	<div class="content">
