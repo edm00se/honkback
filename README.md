@@ -24,6 +24,9 @@ Additionally I chose to do the following:
 - added alt text to toot attachment `img`s and within `video` tags
 - styled the toot attachments, so as to display them at full width
 - styled the account header image to match up with how mastodon shows it (more banner like)
+- added each toot as part of a collection (much like you can navigate to a tweet from tweetback, you can view an individual toot, clicking either the published date or navigating to `/<id>`)
+- adds a js script to only play videos that are scrolled into view (reduce browser usage when they're offscreen)
+- ensures ios video autoplay for GIFs (that are converted to mp4)
 
 ### 1. Move Up `media-attachments` Sub-Directory
 
