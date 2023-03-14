@@ -41,6 +41,7 @@ To repackage the archive file, I did the following:
   - command used: [`find . -name ".DS_Store" -depth -exec rm {} \;`](https://explainshell.com/explain?cmd=find+.+-name+%22.DS_Store%22+-depth+-exec+rm+%7B%7D+%5C%3B)
 - packaged it back up into a `.tar.gz` of the same name, a level up
   - command used: [`tar -czvf ../archive-20230310144132-4f925242d5076a130f3d9f33ad3401d5.tar.gz .`](https://explainshell.com/explain?cmd=tar+-czvf+..%2Farchive-20230310144132-4f925242d5076a130f3d9f33ad3401d5.tar.gz+.)
+  - note: there appears to be an issue with un-tarring on linux from what was tarred by bsd tar. I solved this on my MacBook Pro by installing gnu-tar from homebrew (`brew install gnu-tar`) then doing the same command with `gtar` in place of `tar`
 
 ### 2. Add `movedTo` to `actor.json`
 
