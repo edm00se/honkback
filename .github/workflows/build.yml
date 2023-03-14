@@ -3,7 +3,9 @@ name: Build 11ty and Deploy
 on:
   push:
     branches:
-    - main
+      - main
+    paths-ignore:
+      - README.md
   workflow_dispatch:
 
 permissions:
