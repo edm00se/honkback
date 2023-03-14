@@ -11,7 +11,8 @@ module.exports = function(eleventyConfig) {
 		'src/theme.css': 'theme.css',
 		[`${archiveCache}/media_attachments`]: 'media_attachments',
 		[`${archiveCache}/avatar.*`]: '/',
-		[`${archiveCache}/header.*`]: '/'
+		[`${archiveCache}/header.*`]: '/',
+		'public': '/'
 	});
 
 	eleventyConfig.addFilter("postSlug", (post) => 

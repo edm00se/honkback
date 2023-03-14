@@ -5,7 +5,6 @@ pagination:
     size: 1
     alias: toot
 permalink: "{{ toot | postSlug }}/"
-title: "Honked at: {{ toot.object.published }}"
+title: "Honked at {{ toot.published }}"
 ---
-
 {% include "toot.njk" %}
