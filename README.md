@@ -2,7 +2,7 @@
 
 [![Build 11ty and Deploy](https://github.com/edm00se/honkback/actions/workflows/build.yml/badge.svg)](https://github.com/edm00se/honkback/actions/workflows/build.yml)
 
-An implementation of mojoaxel/tootback to host an archival copy of my Mastodon archive from my now deactivated single-user Mastodon instance, honk.farm.
+An implementation of [mojoaxel/tootback](https://github.com/mojoaxel/tootback) to host an archival copy of my Mastodon archive from my now deactivated single-user Mastodon instance, honk.farm.
 
 ## Why?
 
