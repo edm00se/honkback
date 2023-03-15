@@ -46,4 +46,13 @@ ul.media li video {
 	height: 100%;
 	object-fit: cover;
 }
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+		ul.media li {
+			width: 48%;
+		}
+}
 </style>
