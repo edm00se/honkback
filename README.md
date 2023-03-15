@@ -11,24 +11,11 @@ If you want your toots to be hosted after your server is long gone you could use
 
 ## Customizations
 
-There were a couple of things I had to account for to get my archive file to work. Those are:
+### Fixes
 
-1. repackage my `archive-....tar.gz` file to move the `media-attachments` sub-directory up to be adjacent to `actor.json`
-2. change my `actor.json` to include a top level property of `movedTo`
+There were a couple of things I had to account for to get my archive file to work.
 
-Additionally I chose to do the following:
-
-- updated 11ty to latest (v2)
-- swapped out `peaceiris/actions-gh-pages` for `actions/deploy-pages` in the GitHub action to deploy the site
-- handle various attachment formats in the toots on the main page (aka show GIFs/videos instead of breaking an `img` tag) (see the `src/_includes/toot/attachments.njk` file, it mirrors what was already done in the `src/media.njk` file)
-- added alt text to toot attachment `img`s and within `video` tags
-- styled the toot attachments, so as to display them at full width
-- styled the account header image to match up with how mastodon shows it (more banner like)
-- added each toot as part of a collection (much like you can navigate to a tweet from tweetback, you can view an individual toot, clicking either the published date or navigating to `/<id>`)
-- adds a js script to only play videos that are scrolled into view (reduce browser usage when they're offscreen)
-- ensures ios video autoplay for GIFs (that are converted to mp4)
-
-### 1. Move Up `media-attachments` Sub-Directory
+#### 1. Move Up `media-attachments` Sub-Directory
 
 My archive was generated with a deeper nested folder structure to the `media-attachments` sub-directory. The json files reference media assuming they're in a top-level `media-attachments` sub-dir, so I moved that up from its nested location.
 
@@ -43,9 +30,23 @@ To repackage the archive file, I did the following:
   - command used: [`tar -czvf ../archive-20230310144132-4f925242d5076a130f3d9f33ad3401d5.tar.gz .`](https://explainshell.com/explain?cmd=tar+-czvf+..%2Farchive-20230310144132-4f925242d5076a130f3d9f33ad3401d5.tar.gz+.)
   - note: there appears to be an issue with un-tarring on linux from what was tarred by bsd tar. I solved this on my MacBook Pro by installing gnu-tar from homebrew (`brew install gnu-tar`) then doing the same command with `gtar` in place of `tar`
 
-### 2. Add `movedTo` to `actor.json`
+#### 2. Add `movedTo` to `actor.json`
 
 I was able to follow the example and instructions provided by [mojoaxel/tootback](https://github.com/mojoaxel/tootback) with the exception that I was running into some errors around ~"unable to resolve URL". The source file cited was `pageHeader.njk` and, on reviewing the URLs constructed there, found that is relies on the `movedTo` property from `actor.json`, that my archive was missing as it was built before I migrated my account.
+
+### Additions
+
+Additionally I chose to add/update the following:
+
+- updated 11ty to latest (v2)
+- swapped out `peaceiris/actions-gh-pages` for `actions/deploy-pages` in the GitHub action to deploy the site
+- handle various attachment formats in the toots on the main page (aka show GIFs/videos instead of breaking an `img` tag) (see the `src/_includes/toot/attachments.njk` file, it mirrors what was already done in the `src/media.njk` file)
+- added alt text to toot attachment `img`s and within `video` tags
+- styled the toot attachments, so as to display them at full width
+- styled the account header image to match up with how mastodon shows it (more banner like)
+- added each toot as part of a collection (much like you can navigate to a tweet from tweetback, you can view an individual toot, clicking either the published date or navigating to `/<id>`)
+- adds a js script to only play videos that are scrolled into view (reduce browser usage when they're offscreen)
+- ensures ios video autoplay for GIFs (that are converted to mp4)
 
 ## License
 
